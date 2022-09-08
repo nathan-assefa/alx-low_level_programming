@@ -1,8 +1,9 @@
 #include <stdio.h>
 /**
- * main - entry point
- *
- * return: 0 after prinitng the function
+ * main - print a string inside the puts function
+ * 
+ * Description: using the main function
+ * return: 0 
  */
 int main(void)
 {
