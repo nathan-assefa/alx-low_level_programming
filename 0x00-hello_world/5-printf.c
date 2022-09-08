@@ -1,9 +1,11 @@
 #include <stdio.h>
 
 /**
- * main - prints a text
- *
- * return: 0 since the program succeed
+ * main - prints a text.
+ * 
+ * Description: using the main function 
+ * this function print with proper grammar, but the outcome is a piece of art,
+ * Return: 0
  */
 int main(void)
 {

@@ -3,9 +3,9 @@
 /**
  * main - printing
  *
- * Description: the main function prints the string and 
- * returns 0 since the program is successful
- * return: 0
+ * Description: using the main function
+ * this program prints "Programming is like building a multilingual puzzle
+ * Return: 0
  */
 int main(void)
 {
