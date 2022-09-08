@@ -1,3 +1,4 @@
+#!/bin/bash
 #include <stdio.h>
 /**
  * main: an entry to c program
