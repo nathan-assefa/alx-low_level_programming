@@ -4,7 +4,7 @@
  * main - prints a text.
  * 
  * Description: using the main function 
- * this function print with proper grammar, but the outcome is a piece of art,
+ * this program prints a regular text.
  * Return: 0
  */
 int main(void)
