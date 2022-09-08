@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 /**
- * main - prints a text.
- * 
+ * main - printng a text
+ *
  * Description: using the main function
- * this program prints a regular text.
+ * this program prints a simple text
  * Return: 0
  */
 int main(void)
