@@ -1,6 +1,9 @@
 #include <stdio.h>
 
-/* printing a simple program */
+/**
+ * main - printing
+ *
+ * return: always 0 (successful)
 int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
