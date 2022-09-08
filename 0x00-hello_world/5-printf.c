@@ -3,7 +3,7 @@
 /**
  * main - prints a text.
  * 
- * Description: using the main function 
+ * Description: using the main function
  * this program prints a regular text.
  * Return: 0
  */
