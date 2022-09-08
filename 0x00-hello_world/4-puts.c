@@ -3,8 +3,9 @@
 /**
  * main - printing
  *
- * Description: This progam print a string
- * return: the function returns 0 when it is succeed
+ * Description: the main function prints the string and 
+ * returns 0 since the program is successful
+ * return: 0
  */
 int main(void)
 {
