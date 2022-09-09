@@ -3,7 +3,7 @@
 /**
  * main - printing
  *
- * Return: 0 when the function succeed
+ * Return: 0
  */
 int main(void)
 {
@@ -18,7 +18,13 @@ lower++;
 continue;
 }
 
+else
+{
 putchar(lower);
-return (0);
+lower++;
 }
+
+}
+putchar('\n');
+return (0);
 }
