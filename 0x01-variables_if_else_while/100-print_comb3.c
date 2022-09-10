@@ -9,19 +9,22 @@
  */
 int main(void)
 {
-	int num1 = 48;
+	int num1, num2;
 
-	while(num1 <= 57)
+	for (num1 = 48; num1 <= 57; num1++)
 	{
-		putchar(48);
-		putchar(num1);
-		if (num1 != 57)
+		for (num2 = num1 + 1; num2 <= 57; num2++)
 		{
-			putchar(',');
-			putchar(' ');
-		}
-		num1++;
+			putchar(num1);
+			putchar(num2);
+			if (num1 != 56)
+			{
+				putchar(',');
+				putchar(' ');
+			}
 
+
+		}
 	}
 	putchar('\n');
 	return (0);
