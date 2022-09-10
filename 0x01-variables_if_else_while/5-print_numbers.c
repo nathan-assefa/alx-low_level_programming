@@ -3,6 +3,8 @@
 /**
  * main - printing
  *
+ * Description: this function prints
+ * numbers back to back
  * Return - 0 when the program is succeed
  */
 int main(void)
