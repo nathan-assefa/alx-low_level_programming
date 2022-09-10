@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - printing
+ * main - This functions prints numbers
  *
  * Description: this function prints
  * numbers back to back
