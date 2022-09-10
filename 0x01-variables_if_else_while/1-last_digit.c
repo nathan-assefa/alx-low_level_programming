@@ -8,7 +8,7 @@
  * Return: 0 when the function is succeed
  */
 int main(void)
-{	
+{
 int n;
 srand(time(0));
 n = rand() - RAND_MAX / 2;
