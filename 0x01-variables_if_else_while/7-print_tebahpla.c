@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * mani - Entery point
+ * main - Entery point
  *
  * Return: 0 when the progam is successful
  */
