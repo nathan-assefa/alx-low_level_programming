@@ -11,8 +11,8 @@ int num = 48;
 
 while (num <= 57)
 {
-putchar(num);
-       
+putchar(num)
+
 if (num != 57)
 {
 putchar(',');
