@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 
 /**
  * mani - Entery point
@@ -8,12 +7,12 @@
  */
 int main(void)
 {
-char lower = a;
+char lower = 'z';
 
-while (lower <= 'z')
+while (lower >= 'a')
 {
-putchar(strrev(lower));
-lower++
+putchar(lower);
+lower--;
 }
 
 putchar('\n');
