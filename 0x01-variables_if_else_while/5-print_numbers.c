@@ -1,11 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - This functions prints numbers
+ * main - Entry point
  *
- * Description: this function prints
- * numbers back to back
- * Return - 0 when the program is succeed
+ * Return: Always 0 when the program is succeed
  */
 int main(void)
 {
