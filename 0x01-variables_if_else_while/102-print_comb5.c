@@ -2,8 +2,8 @@
 
 /**
  * main - Entry point
- * 
- * Description: this function prints 
+ *
+ * Description: this function prints
  * the sequance of numbers
  * Return: 0 when the program is succeed
  */
@@ -17,7 +17,7 @@ int main(void)
 
 		while (n2 <= 99)
 		{
-			if (n2 != n1)
+			if (n2 > n1)
 			{
 				putchar((n1 / 10) + 48);
 				putchar((n1 % 10) + 48);
@@ -25,7 +25,7 @@ int main(void)
 				putchar((n2 / 10) + 48);
 				putchar((n2 % 10) + 48);
 
-				if (n1 != 98 || n2 != 98)
+				if (n1 != 98)
 				{
 					putchar(',');
 					putchar(' ');
@@ -40,5 +40,5 @@ int main(void)
 	}
 
 	putchar('\n');
-	return(0);
+	return (0);
 }
