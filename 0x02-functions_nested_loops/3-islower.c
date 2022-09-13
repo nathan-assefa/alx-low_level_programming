@@ -1,10 +1,11 @@
 #include "main.h"
 
 /**
- * main - Entry point
- *
- * int _islower: only runs when the 
+ * int _islower: only runs when the
  * charchter is lowercase
+ *
+ * @c: charchter
+ *
  * return: always 0
  */
 int _islower(int c)

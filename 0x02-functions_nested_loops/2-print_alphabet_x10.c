@@ -1,10 +1,9 @@
 #include "main.h"
 
 /**
- * main - Entery point
- *
  * print_alphabet_x10: prints lowercase alphabets
  * ten times
+ *
  * Return: Always 0
  */
 void print_alphabet_x10(void)
