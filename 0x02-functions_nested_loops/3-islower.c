@@ -1,10 +1,9 @@
 #include "main.h"
 
 /**
- * int _islower: only runs when the
- * charchter is lowercase
+ * _islower: checks for lowercase charachter
  *
- * @c: charchter
+ * @c: int that used for chacking the case
  *
  * return: always 0
  */
