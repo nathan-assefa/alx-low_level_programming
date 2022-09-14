@@ -42,5 +42,5 @@ void jack_bauer(void)
 
 		tim1++;
 	}
-	return (0);
+
 }
