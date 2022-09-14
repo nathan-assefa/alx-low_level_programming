@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _islower: function to chack for lowercase charachter
+ * _islower- function to chack for lowercase charachter
  *
  * @c: the argument
  * Return: 0
