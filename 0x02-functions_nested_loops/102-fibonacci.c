@@ -3,7 +3,7 @@
 /**
  * main- entry point
  *
- * Description: this function prints the 
+ * Description: this function prints the
  * fibonaci number
  * Return: always 0
  */
@@ -17,8 +17,11 @@ int main(void)
 	for (i = 1; i <= 50; i++)
 	{
 		printf("%li", a);
-		putchar(',');
-		putchar(' ');
+		if (i != 50)
+		{
+			putchar(',');
+			putchar(' ');
+		}
 
 		c = a + b;
 		a = b;
