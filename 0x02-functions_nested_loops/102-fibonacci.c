@@ -11,8 +11,9 @@ int main(void)
 
 	a = 1;
 	b = 2;
+	int i;
 
-	for (int i = 1; i < 50; i++)
+	for (i = 1; i < 50; i++)
 	{
 		printf("%d\n", a);
 		putchar(',');
