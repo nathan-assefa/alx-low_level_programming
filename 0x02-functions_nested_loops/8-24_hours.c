@@ -4,43 +4,32 @@
  * jack_bauer: a function that prints every minute of the day of Jack Bauer, starting from 00:00 to 23:59.
  *
  * Description: this function prints time
- * Return: 0
+ * Return: 0;
  */
 void jack_bauer(void)
 {
-	int sec1, sec2, tim1, tim2;
+	int hours = 0;
+	int minute = 0;
+	int hour_reminder;
+	int minute_reminder;
 
-	tim1 = 0;
-	while (tim1 <= 2)
+	while (hours <= 23)
 	{
-		tim2 = 0;
-
-		while (tim2 <= 3)
+		    
+		while (minute <= 59)
 		{
-			sec1 = 0;
-
-			while (sec1 <= 5)
-			{
-				sec2 = 0;
-
-				while (sec2 <= 9)
-				{
-					_putchar(tim1 + '0');
-					_putchar(tim2 + '0');
-					_putchar(':');
-					_putchar(sec1 + '0');
-					_putchar(sec2 + '0');
-					_putchar('\n');
-					sec2++;
-				}
-
-				sec1++;
-			}
-
-			tim2++;
+			hour_reminder = hours % 10;
+			minute_reminder = minute % 10;
+			_putchar((hours / 10) + '0');
+			_putchar(hour_reminder + '0');
+			_putchar(':');
+			_putchar((minute / 10) + '0');
+			_putchar(minute_reminder + '0');
+			minute++;
+			_putchar('\n');
 		}
 
-		tim1++;
+		hours++;
+		minute = 0;
 	}
-
 }
