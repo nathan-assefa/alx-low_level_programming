@@ -10,7 +10,7 @@ int main(void)
 	int c;
 	int num = 0;
 
-	for (c = 1; c < 10; c++)
+	for (c = 1; c < 1024; c++)
 	{
 
 		if (c % 3 == 0 || c % 5 == 0)
