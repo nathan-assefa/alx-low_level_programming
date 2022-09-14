@@ -16,7 +16,6 @@ void jack_bauer(void)
 
 	while (hours <= 23)
 	{
-		    
 		while (minute <= 59)
 		{
 			hour_reminder = hours % 10;
