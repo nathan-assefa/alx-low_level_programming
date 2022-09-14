@@ -7,11 +7,10 @@
  */
 int main(void)
 {
-	int a, b, c;
+	int a, b, c, i;
 
 	a = 1;
 	b = 2;
-	int i;
 
 	for (i = 1; i < 50; i++)
 	{
