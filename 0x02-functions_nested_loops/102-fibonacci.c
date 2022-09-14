@@ -3,18 +3,20 @@
 /**
  * main- entry point
  *
- * return: 0
+ * Description: this function prints the 
+ * fibonaci number
+ * Return: always 0
  */
 int main(void)
 {
-	int a, b, c, i;
+	long a, b, c, i;
 
 	a = 1;
 	b = 2;
 
 	for (i = 1; i < 50; i++)
 	{
-		printf("%d\n", a);
+		printf("%li", a);
 		putchar(',');
 		putchar(' ');
 
