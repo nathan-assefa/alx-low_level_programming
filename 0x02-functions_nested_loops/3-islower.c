@@ -3,6 +3,7 @@
 /**
  * _islower: checks for lowercase charachter
  *
+ * Description: this function prints lowercase alphabet
  * @c: int that used for chacking the case
  * return: 0
  */
