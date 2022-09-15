@@ -5,7 +5,6 @@
  *
  * @c: an argmument
  * Return: 1 when digit
- * Return: 0 otherwise
  */
 int _isdigit(int c)
 {
