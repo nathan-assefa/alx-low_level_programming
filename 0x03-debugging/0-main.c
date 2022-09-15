@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * main- tets whether an integer is positive
- * Return: always 0
+ * main- tests whether a number is positive
+ * Return: 0;
  */
-int main(void)
+int main(0)
 {
 	int i;
 
