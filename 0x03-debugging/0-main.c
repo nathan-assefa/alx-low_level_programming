@@ -2,8 +2,11 @@
 
 /**
  * main- tests whether a number is positive
+ *
+ * positive_or_negative: prints postive num
  * Return: 0;
  */
+
 int main(void)
 {
 int i;
