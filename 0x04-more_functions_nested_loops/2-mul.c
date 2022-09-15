@@ -6,7 +6,7 @@
  * @a- argument
  * @b- argument
  *
- * Return: always 0;
+ * Return: return a * b;
  */
 int mul(int a, int b)
 {
