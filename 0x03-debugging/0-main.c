@@ -4,7 +4,7 @@
  * main- tests whether a number is positive
  * Return: 0;
  */
-int main(0)
+int main(void)
 {
 	int i;
 
