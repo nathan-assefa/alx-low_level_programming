@@ -3,8 +3,8 @@
 /**
  * mul- a function that multiplies two integers.
  *
- * @a- argument
- * @b- argument
+ * @a: argument
+ * @b: argument
  *
  * Return: return a * b;
  */
