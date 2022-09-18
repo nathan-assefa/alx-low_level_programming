@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+/**
+ * primefactors- to print prime factors 
+ * 
+ * @num: argument 
+ */
 void primefactors(int num)  
 {  
     int count;  
