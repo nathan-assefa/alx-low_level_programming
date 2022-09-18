@@ -25,6 +25,7 @@ int main(void)
 		a = b;
 		b = c;
 	}
+
 	printf("%llu\n", sum);
 	return(0);
 }
