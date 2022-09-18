@@ -1,32 +1,31 @@
+#include "main.h"
 #include <stdio.h>
 
 /**
- * main- entry point
+ * main- entery point
  *
- * return: always 0
+ * return: 0
  */
 int main(void)
 {
-	long a, b, c, i;
+	long long int a, b, c, sum, i, num;
 
 	a = 1;
 	b = 2;
+	num = 0;
 
-	for (i = 0; i <= 4000000; i++)
+	for (i = 1; i <= 4000000; i++)
 	{
-		if (a % 2 == 0)
+		if (sum % 2 == 0)
 		{
-			printf("%li", a);
-			if (i != 4000000)
-			{
-				putchar(',');
-				putchar(' ');
-			}
+			num += sum;
 		}
+
 		c = a + b;
-		b = c;
+		sum = a + b + c;
 		a = b;
+		b = c;
 	}
-	putchar('\n');
-	return (0);
+	printf("%lli\n", num);
+	return(0);
 }

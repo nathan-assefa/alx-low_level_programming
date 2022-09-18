@@ -9,14 +9,14 @@
  */
 int main(void)
 {
-	long a, b, c, i;
+	long long int a, b, c, i;
 
 	a = 1;
 	b = 2;
 
 	for (i = 1; i <= 50; i++)
 	{
-		printf("%li", a);
+		printf("%lli", a);
 		if (i != 50)
 		{
 			putchar(',');
