@@ -3,7 +3,7 @@
 /**
  * _puts- printing strings
  *
- * @str: pointer
+ * @str: a pointer
  */
 void _puts(char *str)
 {
@@ -12,4 +12,5 @@ void _puts(char *str)
         _putchar(*str);
         str++;
     }
+    _putchar('\n');
 }
