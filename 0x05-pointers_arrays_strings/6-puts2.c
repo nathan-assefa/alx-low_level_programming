@@ -16,7 +16,7 @@ void puts2(char *str)
         if (i % 2 == 0)
            _putchar(str[i]);
     }
-    if (i == '.')
+    if (i == 46)
        _putchar('.');
    _putchar('\n');
 }
