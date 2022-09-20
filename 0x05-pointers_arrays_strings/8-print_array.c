@@ -2,39 +2,24 @@
 #include <stdio.h>
 
 /**
- * main - check the code for
+ * print_array- Printing array values
  *
- * Return: Always 0.
+ * @a: pointer
+ * @n: length of an array
  */
-int main(void)
-{
-    int array[5];
-
-    array[0] = 98;
-    array[1] = 402;
-    array[2] = -198;
-    array[3] = 298;
-    array[4] = -1024;
-    print_array(array, 5);
-    return (0);
-}
-
 void print_array(int *a, int n)
 {
-     char tmp;
-    int i, len1, len2;
+    int i, j;
 
-    while (s[len1] != '\0')
+    for (i = 0; i < 5; i++)
     {
-            len1++;
-    }
+        printf("%d", a[i]);
 
-    len2 = len1 - 1;
-    for (i = 0; i < len1 / 2; i++)
-    {
-        tmp = s[i];
-        s[i] = s[len2];
-        s[len2] = tmp;
-        len2 -= 1;
+        if (i < 4 )
+        {
+            _putchar(',');
+            _putchar(' ');
+        }
     }
+    _putchar('\n');
 }
