@@ -6,7 +6,7 @@
  *
  * @dest: argumet
  * @src: argument
- * return: char*
+ * Return: dest;
  */
 char *_strcpy(char *dest, char *src)
 {
