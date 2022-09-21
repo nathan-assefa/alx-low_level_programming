@@ -1,25 +1,32 @@
 #include <stdio.h>
 
-char *cap_string(char *s);
-
-
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * cap_string - Making uppercae
+ * @x: parameter
+ * Return: string
  */
-int main(void)
+char *cap_string(char *x)
 {
-    char str[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\nhello world! hello-world 0123456hello world\thello world.hello world\n";
-    char *ptr;
+	char spc[] = {32, 9, '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
 
-    ptr = cap_string(str);
-    printf("%s", ptr);
-    printf("%s", str);
-    return (0);
+	int len = 13;
+	int a = 0, i;
+
+	while (x[a])
+	{
+		i = 0;
+
+		while (i < len)
+		{
+			if ((a == 0 || x[a - 1] == spc[i]) && x[a] >= 'a' && x[a] <= 'z')
+			{
+				x[a] = x[a] - 32;
+			}
+
+			i++;
+		}
+		a++;
+	}
+	return (x);
 }
 
-char *cap_string(char *s)
-{
-
-}
