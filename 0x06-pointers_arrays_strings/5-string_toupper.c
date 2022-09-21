@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <string.h>
+#include "main.h"
+
 
 /**
  * string_toupper- Changing to uppercase
