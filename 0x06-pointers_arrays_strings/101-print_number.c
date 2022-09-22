@@ -1,6 +1,5 @@
 #include "main.h"
 
-void print_number(int n);
 /**
  * print_number- Printing number
  * @n: parameter
