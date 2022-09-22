@@ -19,6 +19,12 @@ i++;
 return (src);
 }
 
+/**
+ * transform_2- helper function to map a letter
+ *
+ * @x: parameter
+ * return: char
+ */
 char transform_2(char x)
 {
 char one[52] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
