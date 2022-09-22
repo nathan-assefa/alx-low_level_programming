@@ -23,7 +23,7 @@ return (src);
  * transform_2- helper function to map a letter
  *
  * @x: parameter
- * return: char
+ * Return: Always char
  */
 char transform_2(char x)
 {
