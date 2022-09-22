@@ -1,7 +1,5 @@
 #include "main.h"
 
-char transform_2(char x);
-
 /**
  * rot13- Encrpting information
  * @src: parameter
