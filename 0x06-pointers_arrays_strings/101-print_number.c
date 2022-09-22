@@ -12,7 +12,6 @@ if (n < 0)
 {
 _putchar('-');
 num = -num;
-n = num;
 }
 
 if ((num / 10) > 0)
