@@ -7,22 +7,17 @@
  */
 char *leet(char *x)
 {
-	int a = 0; b = 0; l = 5;
-	char tr[5] = {'A', 'E', 'O', 'T', 'L'};
-	char trw[5] = {'4', '3', '0', '7', '1'};
+	int index1 = 0, index2;
+	char leet[8] = {'O', 'L', '?', 'E', 'A', '?', '?', 'T'};
 
-	while (x[a])
+	while (x[index1])
 	{
-		b = 0;
-
-		while (b < 1)
+		for (index2 = 0; index2 < 8; index2++)
 		{
-			if (x[a] == tr[b] || x[a] - 32 == tr[b])
-				x[a] = trw[b];
-
-			b++;
+			if (x[index1] == leet[index2] || x[index1] - 32 == leet[index2])
+				x[index1] = index2 + '0';
 		}
-		a++;
+		index1++;
 	}
 	return (x);
 }
