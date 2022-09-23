@@ -8,7 +8,8 @@ int _islower(int c);
 int _isalpha(int c);
 int print_sign(int n);
 
-
+void print_times_table(int n);
+void print_number(int n);
 int _abs(int);
 int print_last_digit(int);
 void jack_bauer(void);
