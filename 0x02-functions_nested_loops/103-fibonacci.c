@@ -2,29 +2,51 @@
 #include <stdio.h>
 
 /**
- * main- entery point
- *
- * Return: always 0
+ * main- this function prints the first
+ * 98 fibonacci numbers
+ * Return: always 0;
  */
 int main(void)
 {
-int n = 4000000;
-int a, b, c, sum = 0;
+    unsigned int a, b, c, i = 0;
 
-a = 0;
-b = 1;
+    a = 1;
+    b = 2;
+    while (i < 98)
+    {
+        if ((a / 10) > 0)
+        {
+            recursion(a);
+        }
+        else
+        {
+            putchar(a + '0');
+        }
 
-while (a <= n)
-{
-if (a % 2 == 0)
-{
-sum += a;
+        if (i != 97)
+        {
+            putchar(',');
+            putchar(' ');
+        }
+
+        c = a + b;
+        a = b;
+        b = c;
+        i++;
+    }
+    putchar('\n');
+    return (0);
 }
-c = a + b;
-a = b;
-b = c;
-}
-printf("%d", sum);
-putchar('\n');
-return (0);
+
+void recursion(unsigned int n)
+{
+    if (n < 0) {
+        putchar('-');
+        n = -n;
+    }
+
+    if (n / 10)
+        recursion(n / 10);
+
+    putchar(n % 10 + '0');
 }
