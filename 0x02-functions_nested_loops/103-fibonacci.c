@@ -21,4 +21,5 @@ b = c;
 }
 printf("%d", sum);
 putchar('\n');
+return (0);
 }
