@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * main- this function prints the first
@@ -20,13 +19,13 @@ recursion(a);
 }
 else
 {
-putchar(a + '0');
+_putchar(a + '0');
 }
 
 if (i != 97)
 {
-putchar(',');
-putchar(' ');
+_putchar(',');
+_putchar(' ');
 }
 
 c = a + b;
@@ -34,19 +33,19 @@ a = b;
 b = c;
 i++;
 }
-putchar('\n');
+_putchar('\n');
 return (0);
 }
 
 void recursion(unsigned int n)
 {
 if (n < 0) {
-putchar('-');
+_putchar('-');
 n = -n;
 }
 
 if (n / 10)
 recursion(n / 10);
 
-putchar(n % 10 + '0');
+_putchar(n % 10 + '0');
 }
