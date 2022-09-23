@@ -37,6 +37,11 @@ _putchar('\n');
 return (0);
 }
 
+/**
+ * recursion- to iterate over the number
+ * @n: parameter
+ *
+ */
 void recursion(unsigned int n)
 {
 if (n / 10)
