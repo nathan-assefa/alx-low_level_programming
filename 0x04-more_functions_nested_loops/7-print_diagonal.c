@@ -19,7 +19,7 @@ void print_diagonal(int n)
 {
 if (n <= 0)
 {
-putchar('\n');
+_putchar('\n');
 }
 else
 {
@@ -33,15 +33,15 @@ while (j < n)
 {
 if (i == j)
 {
-putchar('\\');
+_putchar('\\');
 }
 else
 {
-putchar(' ');
+_putchar(' ');
 }
 j++;
 }
-putchar('\n');
+_putchar('\n');
 i++;
 }
 }
