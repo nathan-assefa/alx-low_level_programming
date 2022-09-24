@@ -2,30 +2,30 @@
 #include <stdio.h>
 
 /**
- * main- entery point
+ * main- entry point
  *
  * Return: always 0
  */
 int main(void)
 {
-	unsigned long long a, b, c, sum, i;
+int n = 4000000;
+int a, b, c, sum = 0;
 
-	a = 1;
-	b = 2;
-	sum = 0;
+a = 0;
+b = 1;
 
-	for (i = 1; i <= 4000000; i++)
-	{
-		if (a % 2 == 0)
-		{
-			sum += a;
-		}
+while (a <= n)
+{
+if (a % 2 == 0)
+{
+sum += a;
+}
+c = a + b;
+a = b;
+b = c;
+}
+printf("%d", sum);
+putchar('\n');
+return (0);
 
-		c = a + b;
-		a = b;
-		b = c;
-	}
-
-	printf("%llu\n", sum);
-	return (0);
 }
