@@ -1,6 +1,7 @@
 #include "main.h"
 
-/**-memcpy - copyies a memory area
+/**
+ * -memcpy - copyies a memory area
  * @dest: pointer
  * @src: pointer
  * @n: parameter
