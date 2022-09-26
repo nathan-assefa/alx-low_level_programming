@@ -19,7 +19,7 @@ void print_diagsums(int *a, int size)
 
 	{
 
-		p = (i * size) + 1;
+		p = (i * size) + i;
 
 		l += *(a + p);
 
@@ -29,7 +29,7 @@ void print_diagsums(int *a, int size)
 
 	{
 
-		p = (j * size) + (size - 1 + i);
+		p = (j * size) +i(size - 1 - j);
 
 		r += *(a + p);
 
