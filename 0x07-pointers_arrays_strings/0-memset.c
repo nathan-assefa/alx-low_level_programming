@@ -6,7 +6,7 @@
  * @s: parameter
  * @b: parameter
  * @n: parameter
- * return: char*
+ * Return: always char
  */
 char *_memset(char *s, char b, unsigned int n)
 {
