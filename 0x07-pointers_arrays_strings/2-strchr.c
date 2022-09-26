@@ -5,8 +5,7 @@
  * @s: pointer
  * @c: parameter
  *
- * Retrun: always a charachter
- *
+ * Return: always a s plus 1
  */
 char *_strchr(char *s, char c)
 {
