@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * @memset - wrting n bytes in the memory
+ * _memset - wrting n bytes in the memory
  *
  * @s: parameter
  * @b: parameter
