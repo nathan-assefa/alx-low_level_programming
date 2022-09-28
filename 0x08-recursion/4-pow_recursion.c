@@ -1,46 +1,24 @@
 #include "main.h"
-#include <stdio.h>
-void print_num(int n);
 
 /**
- * main - check the code
+ * _pow_recursion - power recursion
  *
- * Return: Always 0.
+ * @x: parameter
+ * @y: parameter
+ * Return: int
  */
-int main(void)
-{
-    int r;
-
-    r = _pow_recursion(1, 10);
-    printf("%d\n", r);
-    r = _pow_recursion(1024, 0);
-    printf("%d\n", r);
-    r = _pow_recursion(2, 16);
-    printf("%d\n", r);
-    r = _pow_recursion(5, 2);
-    printf("%d\n", r);
-    r = _pow_recursion(5, -2);
-    printf("%d\n", r);
-    r = _pow_recursion(-5, 3);
-    printf("%d\n", r);
-    return (0);
-}
-
 int _pow_recursion(int x, int y)
 {
-    int z;
-
-    z = x ^ y;
-    if ((z / 10) > 0)
-        print_num(z);
-    putchar(z);
-}
-
-void print_num(int n)
-{
-    if ((n / 10) > 0)
+    if (y < 0)
     {
-        print_num(n / 10);
+        return (-1);
     }
-    putchar((n % 10) + '0');
+    else if (y == 0)
+    {
+        return (1);
+    }
+    else
+    {
+        return (x * _pow_recursion(x, y - 1));
+    }
 }
