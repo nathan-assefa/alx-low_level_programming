@@ -1,43 +1,45 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * main - check the code
+ * evaluate_num - to evaluate
  *
- * Return: Always 0.
+ * @num: parameter
+ * @iterator: parameter
+ * Return: int
  */
-int main(void)
+int evaluate_num(int num, int iterator)
 {
-    int r;
+if (iterator == num - 1)
+return (1);
 
-    r = is_prime_number(1);
-    printf("%d\n", r);
-    r = is_prime_number(1024);
-    printf("%d\n", r);
-    r = is_prime_number(16);
-    printf("%d\n", r);
-    r = is_prime_number(17);
-    printf("%d\n", r);
-    r = is_prime_number(25);
-    printf("%d\n", r);
-    r = is_prime_number(-1);
-    printf("%d\n", r);
-    r = is_prime_number(113);
-    printf("%d\n", r);
-    r = is_prime_number(7919);
-    printf("%d\n", r);
-    return (0);
+else if (num % iterator == 0)
+return (0);
+
+else if(num % iterator != 0)
+return (evaluate_num(num, iterator + 1));
+
+return (0);
 }
 
+/**
+ * is_prime_number - finding prime number
+ *
+ * @n: argument
+ * Return: int
+ */
 int is_prime_number(int n)
 {
-    int i;
-    for (i = 0; i <= 9; i++)
-    {
-        if ((n % i) == 0)
-        {
-            return 0;
-        }
-        return 1;
-    }
+int i;
+
+i = 2;
+
+if (n < 2)
+return (0);
+
+else if (n == 2)
+{
+return (1);
+}
+
+return (evaluate_num(n, i));
 }
