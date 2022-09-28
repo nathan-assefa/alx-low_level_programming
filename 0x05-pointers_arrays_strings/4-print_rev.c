@@ -8,7 +8,6 @@
  */
 void print_rev(char *s)
 {
-<<<<<<< HEAD
     char tmp;
     int i, len1, len2;
 
@@ -26,14 +25,3 @@ void print_rev(char *s)
         len2 -= 1;
     }
 }
-=======
-	int i, j;
-
-	j = strlen(s);
-	for (i = j - 1; i > 0 - 1; i--)
-	{
-		_putchar(s[i]);
-	}
-	_putchar('\n');
-}
->>>>>>> b79cb982ddce4c0c749a443edefb87dfa9728967
