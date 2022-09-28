@@ -1,28 +1,17 @@
 #include "main.h"
-#include <stdio.h>
-#include <string.h>
 
 /**
- * main - check the code
+ * _strlen_recursion - printing the length of a string
  *
- * Return: Always 0.
+ * Return: Always len.
  */
-int main(void)
-{
-    int n;
-
-    n = _strlen_recursion("Corbin Coleman");
-    printf("%d\n", n);
-    return (0);
-}
-
 int _strlen_recursion(char *s)
 {
-    int i = 0;
+    int len = 0;
 
-    if (s[i])
+    if (s[len])
     {
-        _strlen_recursion(s + 1);
-        _putchar(s[i]);
+        len++;
+        return (len += _strlen_recursion(s + 1));
     }
 }
