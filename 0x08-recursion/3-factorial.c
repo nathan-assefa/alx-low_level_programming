@@ -2,6 +2,7 @@
 
 /**
  * factorial - to find factorial of any number
+ * @n: paramter
  *
  * Return: Always the result of factorial.
  */

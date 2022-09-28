@@ -1,40 +1,40 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * main - check the code
+ * _evaluate - to evaluate
  *
- * Return: Always 0.
+ * @i: parameter
+ * @n: parameter
+ * Return: int
  */
-int main(void)
+int _evaluate(int i, int n)
 {
-    int r;
+    if (n == 0 || n == 1)
+    return (n);
+    else if (i * i < n)
+    return ((_evaluate(i + 1, n)));
 
-    r = _sqrt_recursion(1);
-    printf("%d\n", r);
-    r = _sqrt_recursion(1024);
-    printf("%d\n", r);
-    r = _sqrt_recursion(16);
-    printf("%d\n", r);
-    r = _sqrt_recursion(17);
-    printf("%d\n", r);
-    r = _sqrt_recursion(25);
-    printf("%d\n", r);
-    r = _sqrt_recursion(-1);
-    printf("%d\n", r);
-    return (0);
+    else if (i * i == n)
+    return (i);
+
+    return (-1);
+    return (-1);
+
 }
 
+/**
+ * _sqrt_recursion - to print square roots
+ *
+ * @n: parameter
+ * Return: int
+ */
 int _sqrt_recursion(int n)
 {
-    if (n < 0)
-    {
-        return -1;
-    }
+    int i = 0;
 
-    if ((n / 2) > 0)
-    {
-        _sqrt_recursion(n / 2);
-    }
-    return (n);
+    if (i < 0)
+    return (-1);
+
+    else
+    return (_evaluate(i, n));
 }
