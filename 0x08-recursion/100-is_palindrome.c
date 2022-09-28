@@ -1,50 +1,52 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * * is_palindrome - returns the 1 if s is a palindrome
+ * * @s: string to be checked
+ * *
+ * * Return: 1 if s is a palindrome, 0 otherwise
  */
-int main(void)
-{
-    int r;
-
-    r = is_palindrome("level");
-    printf("%d\n", r);
-    r = is_palindrome("redder");
-    printf("%d\n", r);
-    r = is_palindrome("test");
-    printf("%d\n", r);
-    r = is_palindrome("step on no pets");
-    printf("%d\n", r);
-    return (0);
-}
-
-int p1(char *s, int l)
-{
-    if (l < 1)
-    return (1);
-
-    if (*s == *(s + 1))
-    return (p1(s + 1, l - 2));
-
-    return (0);
-}
-
-int _strlen_recursion(char *s)
-{
-    if (*s == '\0')
-    return (0);
-
-    else
-    {
-        return (1 + _strlen_recursion(s + 1));
-    }
-}
-
 int is_palindrome(char *s)
 {
-    int len = _strlen_recursion(s);
-    return (p1(s, len - 1));
+	int flag = 1;
+
+	check(s, 0, _strlen_recursion(s) - 1, &flag);
+	return (flag);
+}
+
+/**
+ * * check - checks if a string is a palindrome
+ * * @s: string to be checked
+ * * @start: start index
+ * * @end: end index
+ * * @flag: flag to indicate if a string is a palindrome
+ * * Return: void
+ */
+void check(char *s, int start, int end, int *flag)
+{
+	if (start <= end)
+	{
+		if (s[start] == s[end])
+			*flag *= 1;
+		else
+			*flag *= 0;
+		check(s, start + 1, end - 1, flag);
+	}
+}
+
+/**
+ * * _strlen_recursion - calculates the length of a string
+ * * @s: string to be used
+ * * Return: length of the string
+ */
+int _strlen_recursion(char *s)
+{
+	int sum = 0;
+
+	if (*s != '\0')
+	{
+		sum++;
+		sum += _strlen_recursion(s + 1);
+	}
+	return (sum);
 }
