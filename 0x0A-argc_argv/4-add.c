@@ -2,15 +2,12 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-<<<<<<< HEAD
 /**
  * main - entry point
  * @argc: argument
  * @argv: argument
  * Return: 0
  */
-=======
->>>>>>> 7a18a61124a8fa2909b5abb18f51605735a1e90f
 int main(int argc, char *argv[])
 {
 int i, sum = 0;
