@@ -2,7 +2,13 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-int main (int argc, char *argv[])
+/**
+ * main - entry point
+ * @argc: argument
+ * @argv: argument
+ * Return: 0
+ */
+int main(int argc, char *argv[])
 {
 int i, sum = 0;
 
@@ -20,7 +26,7 @@ char *str;
 str = argv[i];
 for (j = 0; j < str[j]; j++)
 {
-if (str[j] < 48 || str[j] >57)
+if (str[j] < 48 || str[j] > 57)
 {
 printf("Error\n");
 return (1);
