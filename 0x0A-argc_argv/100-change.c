@@ -12,7 +12,11 @@ int main(int argc, char *argv[])
 {
 int total, cents[] = {25, 10, 5, 2, 1}, coins = 0;
 
-if (argc != 2)
+if (atoi(argv[1]) < 0)
+{
+    printf("%d\n", 0);
+}
+else if (argc != 2)
 {
 printf("Error\n");
 return (1);
