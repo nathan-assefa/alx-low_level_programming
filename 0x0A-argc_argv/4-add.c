@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <string.h>
 
 /**
  * main - entry point
@@ -10,23 +11,19 @@
  */
 int main(int argc, char *argv[])
 {
-int i, sum = 0;
+int sum = 0, i;
 
-if (argc == 1)
-{
-printf("%i\n", 0);
-}
-else
+if (argc > 1)
 {
 for (i = 1; i < argc; i++)
 {
-int j;
+int b;
 char *str;
 
 str = argv[i];
-for (j = 0; j < str[j]; j++)
+for (b = 0; b < str[b]; b++)
 {
-if (str[j] < 48 || str[j] > 57)
+if (str[b] < 48 || str[b] > 57)
 {
 printf("Error\n");
 return (1);
@@ -34,11 +31,11 @@ return (1);
 
 }
 }
-for (i = 1; i < argc; i++)
+}
+for (i = 1; i <= argc; i++)
 {
 sum += atoi(argv[i]);
 }
 printf("%d", sum);
-}
-return (0);
+return(0);
 }
