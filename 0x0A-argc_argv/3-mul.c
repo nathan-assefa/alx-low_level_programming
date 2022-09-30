@@ -17,6 +17,6 @@ int main(int argc, char *argv[])
         return (1);
     }
     Product = atoi(argv[1]) * atoi(argv[2]);
-    printf("Product of these two number is =  %d\n", Product);
+    printf("%d\n", Product);
     return (0);
 }
