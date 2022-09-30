@@ -14,7 +14,7 @@ int total, cents[] = {25, 10, 5, 2, 1}, coins = 0;
 
 if (atoi(argv[1]) < 0)
 {
-    printf("%d\n", 0);
+printf("%d\n", 0);
 }
 else if (argc != 2)
 {
@@ -27,7 +27,7 @@ total = atoi(argv[1]);
 
 while (total > 0)
 {
-if(total >= cents[0])
+if (total >= cents[0])
 total -= cents[0];
 else if (total >= cents[1])
 total -= cents[1];
