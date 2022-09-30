@@ -40,7 +40,7 @@ total -= cents[4];
 
 coins++;
 }
-printf("%d", coins);
+printf("%d\n", coins);
 }
 return (0);
 }
