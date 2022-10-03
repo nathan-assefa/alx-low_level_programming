@@ -11,11 +11,11 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-    int i, n, total, j, m;
+    int i, n, j, m;
 
 
-    total = strlen(s1) + strlen(s2) + 1;
-    char *concat = malloc(total);
+    // total = strlen(s1) + strlen(s2) + 1;
+    char *concat = malloc(16);
     if (concat == NULL)
     {
         return (NULL);
