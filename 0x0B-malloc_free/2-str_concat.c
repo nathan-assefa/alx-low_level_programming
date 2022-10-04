@@ -11,7 +11,7 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	int i, j;
+	unsigned long int i, j;
 	char *concat;
 
 	if (s1 == NULL || s2 == NULL)
@@ -33,5 +33,5 @@ char *str_concat(char *s1, char *s2)
 	}
 
 	return (concat);
-	free(concat)
+	free(concat);
 }
