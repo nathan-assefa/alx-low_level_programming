@@ -9,21 +9,3 @@
  *
  * Return: double pointer
  */
-int **alloc_grid(int width, int height)
-{
-	int i;
-
-	int **matrix = malloc(sizeof(int *) * height);
-
-	if (matrix == NULL)
-	{
-		return (NULL);
-	}
-
-	for (i = 0; i < height; i++)
-	{
-		matrix[i] = malloc(sizeof(int) * width);
-	}
-
-	return (matrix);
-}
