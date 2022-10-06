@@ -1,5 +1,4 @@
 #include "main.h"
-
 #include <stdlib.h>
 
 /**
@@ -12,17 +11,26 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int *byte;
+unsigned int *byte;
+int i, total = 0;
 
-	if (nmemb == 0 || size == 0)
-	{
-		return (NULL);
-	}
+if (nmemb == 0 || size == 0)
+{
+return NULL;
+}
 
-	byte = calloc(nmemb, size);
-	if (byte == NULL)
-	{
-		return (NULL);
-	}
-	return (byte);
+byte = (unsigned int *) malloc(nmemb * sizeof(size));
+if (byte == NULL)
+{
+return NULL;
+}
+while (byte[total] < (nmemb * sizeof(size)))
+total++;
+
+
+for (i = 0; i < total; i++)
+{
+byte[i] = 0;
+}
+return byte;
 }
