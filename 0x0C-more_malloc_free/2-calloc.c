@@ -14,5 +14,5 @@ void *_calloc(unsigned int nmemb, unsigned int size)
     int *byte;
 
     byte = calloc(nmemb, size);
-    return byte;
+    return (byte);
 }
