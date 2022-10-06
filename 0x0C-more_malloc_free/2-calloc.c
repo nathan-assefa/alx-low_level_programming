@@ -19,16 +19,13 @@ if (nmemb == 0 || size == 0)
 return NULL;
 }
 
-byte = (unsigned int *) malloc(nmemb * sizeof(size));
+byte = (unsigned int *) malloc(nmemb * size);
 if (byte == NULL)
 {
 return NULL;
 }
-while (byte[total] < (nmemb * sizeof(size)))
-total++;
 
-
-for (i = 0; i < total; i++)
+for (i = 0; i < (nmemb * size); i++)
 {
 byte[i] = 0;
 }
