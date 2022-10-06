@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * _colloc- a function that allocates memory for an
+ * _calloc- a function that allocates memory for an
  * array, using malloc
  *
  * @nmemb: paramter
