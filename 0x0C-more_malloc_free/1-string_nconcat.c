@@ -27,7 +27,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (n >= strlen(s2))
 		strcat(str_concat, s2);
 
-	strncat(str_concat, s2, n);
+	else
+		strncat(str_concat, s2, n);
+	str_concat += '\0';
 
 	return (str_concat);
 
