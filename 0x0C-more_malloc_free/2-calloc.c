@@ -19,7 +19,7 @@ if (nmemb == 0 || size == 0)
 return NULL;
 }
 
-byte = (unsigned int *) malloc(nmemb * size);
+byte = malloc(nmemb * size);
 if (byte == NULL)
 {
 return NULL;
