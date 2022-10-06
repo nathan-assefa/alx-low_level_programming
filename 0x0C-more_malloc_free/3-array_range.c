@@ -13,13 +13,13 @@ int *arr, i = 0, t = min;
 
 if (min > max)
 {
-return (0);
+return (NULL);
 }
 
 arr = malloc((max - min + 1) * sizeof(int));
 if (!arr)
 {
-return (0);
+return (NULL);
 }
 while (i <= max - min)
 {
