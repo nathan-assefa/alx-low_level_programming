@@ -16,18 +16,18 @@ unsigned int i;
 
 if (nmemb == 0 || size == 0)
 {
-return NULL;
+return (NULL);
 }
 
 byte = malloc(nmemb * size);
 if (byte == NULL)
 {
-return NULL;
+return (NULL);
 }
 
 for (i = 0; i < (nmemb * size); i++)
 {
 byte[i] = 0;
 }
-return byte;
+return (byte);
 }
