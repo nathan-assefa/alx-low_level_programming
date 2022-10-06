@@ -13,6 +13,15 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
     int *byte;
 
+    if (nmemb == 0 || size == 0)
+    {
+        return (NULL);
+    }
+
     byte = calloc(nmemb, size);
+    if (byte == NULL)
+    {
+        return (NULL);
+    }
     return (byte);
 }
