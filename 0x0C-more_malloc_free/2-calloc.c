@@ -2,11 +2,7 @@
 #include <stdlib.h>
 
 /**
-<<<<<<< HEAD
- * _calloc - a function that allocates memory for an
-=======
  * _calloc- a function that allocates memory for an
->>>>>>> d32b9f6a36776a82dadb2aac0bf927973050e6fb
  * array, using malloc
  *
  * @nmemb: paramter
