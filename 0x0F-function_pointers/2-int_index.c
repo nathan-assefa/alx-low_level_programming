@@ -4,10 +4,10 @@
 /**
  * int_index - call_back function
  *
- * @array: an array
- * @size: the size of an array
- * @cmp: callback function
- * Return: always int
+ * @array: array
+ * @size: size of array
+ * @cmp: pointer function
+ * Return: int
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
@@ -18,7 +18,7 @@ if (size <= 0)
 return (-1);
 }
 
-else if (array && cmp)
+if (array && cmp)
 {
 for (i = 0; i < size; i++)
 {
@@ -27,6 +27,7 @@ if (cmp(array[i]))
 return (i);
 }
 }
-return (-1);
 }
+
+return (-1);
 }
