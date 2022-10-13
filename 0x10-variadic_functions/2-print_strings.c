@@ -16,14 +16,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 	char *x;
 
-	if (n)
-	{
-		x = malloc(sizeof(char) * n);
-		if (x == NULL)
-		{
-			return;
-		}
-
 		va_start(ap, n);
 		for (i = 0; i < n; i++)
 		{
@@ -31,9 +23,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			if (x == NULL)
 			{
 				printf("nil\n");
-				return;
 			}
-			printf("%s", x);
+			else
+				printf("%s", x);
 
 			if (i != (n - 1) && separator)
 			{
@@ -42,6 +34,5 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		}
 		printf("\n");
 		va_end(ap);
-		free(x);
 	}
 }
