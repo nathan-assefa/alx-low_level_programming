@@ -16,7 +16,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
     unsigned int i;
     char *x;
 
-    if (separator && n)
+    if (n)
     {
         x = malloc(sizeof *x * n);
         if (x == NULL)
@@ -35,19 +35,13 @@ void print_strings(const char *separator, const unsigned int n, ...)
             }
             printf("%s", x);
 
-            if (i != (n - 1))
+            if (i != (n - 1) && separator)
             {
-                printf(", ");
+                printf("%s", separator);
             }
         }
         va_end(ap);
     }
     _putchar('\n');
 
-}
-
-int main(void)
-{
-    print_strings(", ", 2, "Jay", "Django");
-    return (0);
 }
