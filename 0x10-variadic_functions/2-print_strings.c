@@ -12,37 +12,35 @@
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-    va_list ap;
-    unsigned int i;
-    char *x;
+	va_list ap;
+	unsigned int i;
+	char *x;
 
-    if (n)
-    {
-        x = malloc(sizeof(char) * n);
-        if (x == NULL)
-        {
-            return;
-        }
+	if (n)
+	{
+		x = malloc(sizeof(char) * n);
+		if (x == NULL)
+		{
+			return;
+		}
 
-        va_start(ap, n);
+		va_start(ap, n);
+		for (i = 0; i < n; i++)
+		{
+			x = va_arg(ap, char*);
+			if (x == NULL)
+			{
+				printf("nil\n");
+				return;
+			}
+			printf("%s", x);
 
-        for (i = 0; i < n; i++)
-        {
-            x = va_arg(ap, char*);
-            if (x == NULL)
-            {
-                printf("nil\n");
-                return;
-            }
-            printf("%s", x);
-
-            if (i != (n - 1) && separator)
-            {
-                printf("%s", separator);
-            }
-        }
-        printf("\n");
-        va_end(ap);
-    }
-
+			if (i != (n - 1) && separator)
+			{
+				printf("%s", separator);
+			}
+		}
+		printf("\n");
+		va_end(ap);
+	}
 }
