@@ -3,11 +3,30 @@
 #include <string.h>
 #include "lists.h"
 
+
 /**
- * * add_node - Adding node at the beginning of linked list
- * * @head: Double pointer to the linked list
- * * @str: string pointer
- * * Return: always list_t
+ *_strlen- measures the length of a string
+ *@s: pointer to a string
+ *Return: size_t
+ */
+size_t _strlen(const char *s)
+{
+	size_t len;
+
+	len = 0;
+	while (s[len])
+	{
+		len++;
+	}
+
+	return (len);
+}
+
+/**
+ * *add_node - Adding node at the beginning of linked list
+ * *@head: Double pointer to the linked list
+ * *@str: string pointer
+ * *Return: always list
  */
 list_t *add_node(list_t **head, const char *str)
 {
