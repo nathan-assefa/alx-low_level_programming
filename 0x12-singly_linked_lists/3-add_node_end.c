@@ -23,7 +23,7 @@ size_t _strlen(const char *s)
 }
 
 /**
- * *add_node - Adding node at the beginning of linked list
+ * *add_node_end - Adding node at the beginning of linked list
  * *@head: Double pointer to the linked list
  * *@str: string pointer
  * *Return: always list
