@@ -9,18 +9,20 @@
 size_t print_list(const list_t *h)
 {
 	size_t i;
-	const list_t *tmp;
+
+	i = 0;
 
 	if (h->str == NULL)
 	{
 		printf("[0] (nail)\n");
 		h = h->next;
+		i++;
 	}
 
-	i = 0;
-	for (tmp = h; tmp; tmp = tmp->next)
+	while (h != NULL)
 	{
-		printf("[%d] %s\n", tmp->len, tmp->str);
+		printf("[%d] %s\n", h->len, h->str);
+		h = h->next;
 		i++;
 	}
 
