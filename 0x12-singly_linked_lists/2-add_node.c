@@ -9,9 +9,9 @@
  *@s: pointer to a string
  *Return: size_t
  */
-size_t _strlen(const char *s)
+int _strlen(const char *s)
 {
-	size_t len;
+	int len;
 
 	len = 0;
 	while (s[len])
