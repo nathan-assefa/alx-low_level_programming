@@ -11,19 +11,14 @@
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *tmp;
-	listint_t *new_node;
-	unsigned int i;
-
-	if (*head == NULL)
-		return (NULL);
+	listint_t *tmp, *new_node
+	unsigned int i, len;
 
 	new_node = malloc(sizeof(listint_t));
 	if (new_node == NULL)
 	{
 		return (NULL);
 	}
-
 	new_node->n = n;
 	if (idx == 0)
 	{
@@ -31,7 +26,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		*head = new_node;
 		return (new_node);
 	}
-
 	tmp = *head;
 	i = 1;
 	while (tmp->next)
@@ -44,10 +38,35 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		tmp = tmp->next;
 		i++;
 	}
-	if (tmp == NULL || tmp->next == NULL)
+	len =  listint_len(*head);
+	if (len == idx)
+	{
+		new_node->next = NULL;
+		tmp->next = new_node;
+		return (new_node);
+	}
+	else if (tmp == NULL || tmp->next == NULL)
 	{
 		return (NULL);
 	}
 	tmp->next = new_node;
 	return (new_node);
+}
+
+/**
+ * listint_len- mesures length of list
+ * @h: member of list
+ * Return: size_t
+ */
+size_t listint_len(const listint_t *h)
+{
+	size_t len;
+
+	len = 0;
+	while (h)
+	{
+		len++;
+		h = h->next;
+	}
+	return (len);
 }
