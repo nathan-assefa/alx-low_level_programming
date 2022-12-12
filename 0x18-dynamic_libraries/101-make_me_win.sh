@@ -1,2 +1,3 @@
-#!/bin/bash
-d52e6c18e0723f5b025a75dea19ef365  gm
+#!/usr/bin
+gcc -fPIC -shared -o mylib.so mylib.c
+LD_PRELOAD=/$PWD/mylib.so ./gm 9 8 10 24 75 9
