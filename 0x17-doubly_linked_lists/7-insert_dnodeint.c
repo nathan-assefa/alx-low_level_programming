@@ -1,59 +1,41 @@
 #include "lists.h"
 
 /**
- * * insert_dnodeint_at_index- insert node at any position
- * * @h: pointer to linked list
- * * @idx: position
- * * @n: data
- * * Return: new linked list
+ * * insert_dnodeint_at_index - Inserts a new node in a dlistint_t
+ * *                            list at a given position.
+ * * @h: A pointer to the head of the dlistint_t list.
+ * * @idx: The position to insert the new node.
+ * * @n: The integer for the new node to contain.
+ * *
+ * * Return: If the function fails - NULL.
+ * *         Otherwise - the address of the new node.
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new_node;
-	dlistint_t *tail, *tmp2;
+	dlistint_t *tmp = *h, *new;
 
-	if (*h == NULL)
-	{
-		return (NULL);
-	}
-	new_node = malloc(sizeof(dlistint_t));
-	if (!new_node)
-	{
-		return (NULL);
-	}
-
-	new_node->n = n;
-
-	tail = *h;
 	if (idx == 0)
+		return (add_dnodeint(h, n));
+
+	for (; idx != 1; idx--)
 	{
-		new_node->next = *h;
-		new_node->prev = NULL;
-		(*h)->prev = new_node;
-		*h = new_node;
-		return (*h);
+		tmp = tmp->next;
+		if (tmp == NULL)
+			return (NULL);
 	}
 
-	while (idx > 1)
-	{
-		tail = tail->next;
-		idx--;
-	}
-	if (tail->next == NULL)
-	{
-		new_node->next = NULL;
-		new_node->prev = tail;
-		tail->next = new_node;
-		return (*h);
-	}
-	else
-	{
-		tmp2 = tail->next;
-		new_node->next  = tmp2;
-		new_node->prev = tail;
-		tail->next  = new_node;
-		tmp2->prev = new_node;
-		return (*h);
-	}
-	return (NULL);
+	if (tmp->next == NULL)
+		return (add_dnodeint_end(h, n));
+
+	new = malloc(sizeof(dlistint_t));
+	if (new == NULL)
+		return (NULL);
+
+	new->n = n;
+	new->prev = tmp;
+	new->next = tmp->next;
+	tmp->next->prev = new;
+	tmp->next = new;
+
+	return (new);
 }
