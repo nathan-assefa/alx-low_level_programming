@@ -15,14 +15,16 @@ hash_table_t *hash_table_create(unsigned long int size)
 	new_hash = calloc(1, sizeof(hash_table_t));
 	if (new_hash == NULL)
 	{
-		free(new_hash);
 		return (NULL);
 	}
 
 	new_hash->size = size;
 	new_hash->array = calloc(size, sizeof(hash_node_t *));
 	if (new_hash->array == NULL)
+	{
+		free(new_hash);
 		return (NULL);
+	}
 
 	return (new_hash);
 }
