@@ -15,7 +15,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		return (NULL);
 	}
 
-	x = hash_djb2((unsigned char*)key);
+	x = hash_djb2((unsigned char *)key);
 	idx = x % ht->size;
 
 	for (idx = 0; idx < ht->size; idx++)
