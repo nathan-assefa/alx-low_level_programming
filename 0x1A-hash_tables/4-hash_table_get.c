@@ -8,14 +8,23 @@
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	unsigned long int idx;
+	unsigned long int idx, x;
 
-	idx = hash_djb2((unsigned char *)key);
+	if (!ht || !key)
+	{
+		return (NULL);
+	}
+
+	x = hash_djb2((unsigned char*)key);
+	idx = x % ht->size;
 
 	for (idx = 0; idx < ht->size; idx++)
 	{
-		if (strcmp(ht->array[idx]->key, key) == 0)
-			return (ht->array[idx]->value);
+		if (ht->array[idx])
+		{
+			if (strcmp(ht->array[idx]->key, key) == 0)
+				return (ht->array[idx]->value);
+		}
 	}
 	return (NULL);
 }
