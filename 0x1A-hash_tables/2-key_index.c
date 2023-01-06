@@ -8,11 +8,11 @@
  */
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
-	int x;
+	unsigned long int x, i;
 
 	x = hash_djb2(key);
 
-	for (int i = 0; i < size; i++)
+	for (i = 0; i < size; i++)
 	{
 		if (x % size == i)
 			break;
