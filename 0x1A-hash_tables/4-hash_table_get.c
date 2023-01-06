@@ -9,6 +9,7 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int idx, x;
+	hash_node_t *item;
 
 	if (!ht || !key || !*key)
 	{
@@ -20,10 +21,12 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	for (idx = 0; idx < ht->size; idx++)
 	{
-		if (ht->array[idx])
+		item = ht->array[idx]
+		while (item)
 		{
-			if (strcmp(ht->array[idx]->key, key) == 0)
-				return (ht->array[idx]->value);
+			if (strcmp(ht->item->key, key) == 0)
+				return (item->value);
+			item = item->next;
 		}
 	}
 	return (NULL);
