@@ -20,9 +20,6 @@ void hash_table_delete(hash_table_t *ht)
 	unsigned long int i;
 	hash_node_t *hash;
 
-	if (!ht)
-		return;
-
 	for (i = 0; i < ht->size; i++)
 	{
 		hash = ht->array[i];
