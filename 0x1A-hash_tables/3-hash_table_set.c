@@ -28,6 +28,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (i == ht->size)
 		{
+			free(new_item);
 			return (0);
 		}
 		ht->array[x] = new_item;
