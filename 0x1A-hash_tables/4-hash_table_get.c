@@ -21,10 +21,10 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	for (idx = 0; idx < ht->size; idx++)
 	{
-		item = ht->array[idx]
+		item = ht->array[idx];
 		while (item)
 		{
-			if (strcmp(ht->item->key, key) == 0)
+			if (strcmp(item->key, key) == 0)
 				return (item->value);
 			item = item->next;
 		}
