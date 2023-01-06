@@ -7,7 +7,7 @@
 void free_nodes(hash_node_t *item)
 {
 	free(item->key);
-	free(itme->value);
+	free(item->value);
 	free(item);
 }
 
@@ -25,9 +25,12 @@ void hash_table_delete(hash_table_t *ht)
 
 	for (i = 0; i < ht->size; i++)
 	{
-		hash = ht->array[i]
-			if(hash)
-				free_nodes(hash)
+		hash = ht->array[i];
+			while (hash)
+			{
+				free_nodes(hash);
+				hash = hash->next;
+			}
 	}
 
 	free(ht->array);
