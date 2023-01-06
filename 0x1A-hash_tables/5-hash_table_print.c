@@ -6,7 +6,7 @@
  */
 void hash_table_print(const hash_table_t *ht)
 {
-	unsigned long int j, i, comma = 0;
+	unsigned long int i, comma = 0;
 
 	if (ht)
 	{
