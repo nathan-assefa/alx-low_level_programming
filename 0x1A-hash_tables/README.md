@@ -1,1 +1,1 @@
-0x1A-hash_tables
+This project is about how to develop hash function using C language
