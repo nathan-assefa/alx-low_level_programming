@@ -1,7 +1,7 @@
 #include "hash_tables.h"
 
 /**
- * * free_node- to free items
+ * * free_nodes- to free items
  * * @item: item to be freed
  */
 void free_nodes(hash_node_t *item)
