@@ -1,36 +1,26 @@
 #include "hash_tables.h"
 
 /**
- * * free_nodes- to free items
- * * @item: item to be freed
- */
-void free_nodes(hash_node_t *item)
-{
-	free(item->key);
-	free(item->value);
-	free(item);
-}
-
-/**
- * * hash_table_delete- to free hash table
- * * @ht: hash table to be freed
+ * * hash_table_delete - deletes a hash table.
+ * * @ht: the hash table.
  */
 void hash_table_delete(hash_table_t *ht)
 {
-	unsigned long int i;
-	hash_node_t *hash;
+	unsigned long int i = 0;
+	hash_node_t *node;
 
-	for (i = 0; i < ht->size; i++)
+	while (i < ht->size)
 	{
-		hash = ht->array[i];
-			while (hash)
-			{
-				free_nodes(hash);
-				hash = hash->next;
-			}
+		while (ht->array[i] != NULL)
+		{
+			node = ht->array[i]->next;
+			free(ht->array[i]->key);
+			free(ht->array[i]->value);
+			free(ht->array[i]);
+			ht->array[i] = node;
+		}
+		i++;
 	}
-
 	free(ht->array);
 	free(ht);
-
 }
