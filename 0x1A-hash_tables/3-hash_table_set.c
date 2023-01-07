@@ -28,6 +28,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				return (0);
 			free(head->value);
 			head->value = new_value;
+			return (1);
 		}
 	}
 
