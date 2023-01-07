@@ -1,74 +1,75 @@
 #include "hash_tables.h"
 
 /**
- * new_node - allocates a new node with checking
- * @key: the string key
- * @value: the string value
- *
- * Return: the node or NULL
- */
-hash_node_t *new_node(const char *key, const char *value)
-{
-	hash_node_t *node;
-
-	node = calloc(1, sizeof(hash_node_t));
-	if (!node)
-		return (0);
-
-	node->key = strdup(key);
-	if (!node->key)
-	{
-		free(node);
-		return (0);
-	}
-	node->value = strdup(value);
-	if (!node->value)
-	{
-		free(node->key);
-		free(node);
-		return (0);
-	}
-
-	return (node);
-}
-
-
-/**
- * hash_table_set - adds an element to a hash table
- * @ht: pointer to hash table
- * @key: the string key
- * @value: the string value
- *
- * Return: 1 on success, 0 otherwise
+ * * hash_table_set- To set elements of hash table
+ * * @ht: structure of hash table;
+ * * @value: value of an item
+ * * @key: key of an item
+ * * Return: 1 or 0
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *node = NULL, *head;
-	unsigned long int index;
+	unsigned long int x, idx;
+	hash_node_t *new_item, *head;
+	char *new_value;
 
-	if (!ht || !key || !*key || !value)
+	if (!key || !value || !ht)
 		return (0);
 
-	index = key_index((const unsigned char *)key, ht->size);
-	head = ht->array[index];
-	while (head)
-	{
-		if (!strcmp(key, head->key))
-		{
-			char *_value = strdup(value);
+	idx = hash_djb2((unsigned char*)key);
+	x = idx % ht->size;
 
-			if (!_value)
+	for (head = ht->array[x]; head != NULL; head = head->next)
+	{
+		if (strcmp(head->key, key) == 0)
+		{
+			new_value = malloc(strlen(value) + 1);
+			if (new_value == NULL)
 				return (0);
 			free(head->value);
-			head->value = _value;
-			return (1);
+			strcpy(new_value, value);
+			strcpy(head->value, new_value);
 		}
-		head = head->next;
 	}
-	node = new_node(key, value);
-	if (!node)
+
+	new_item = creat_items(key, value);
+	if (new_item == NULL)
 		return (0);
-	node->next = ht->array[index];
-	ht->array[index] = node;
+
+	new_item->next = ht->array[x];
+	ht->array[x] = new_item;
 	return (1);
+}
+
+/**
+ * * creat_items- Creating new item
+ * * @key: key of the new item
+ * * @value: value of the item
+ * * Return: new-created item
+ */
+hash_node_t *creat_items(const char *key, const char *value)
+{
+	hash_node_t *new_item;
+
+	new_item = malloc(sizeof(hash_node_t));
+	if (new_item == NULL)
+		return (NULL);
+	new_item->key = malloc(strlen(key) + 1);
+	if (new_item->key == NULL)
+	{
+		free(new_item);
+		return (NULL);
+	}
+	new_item->value = malloc(strlen(value) + 1);
+	if (new_item->value == NULL)
+	{
+		free(new_item->key);
+		free(new_item);
+		return (NULL);
+	}
+	strcpy(new_item->key, key);
+	strcpy(new_item->value, value);
+	new_item->next = NULL;
+
+	return new_item;
 }
