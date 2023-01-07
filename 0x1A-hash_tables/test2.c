@@ -49,25 +49,27 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  */
 hash_node_t *creat_items(const char *key, const char *value)
 {
-	hash_node_t *node;
+	hash_node_t *new_item;
 
-	node = calloc(1, sizeof(hash_node_t));
-	if (!node)
-		return (0);
-
-	node->key = strdup(key);
-	if (!node->key)
+	new_item = malloc(sizeof(hash_node_t));
+	if (new_item == NULL)
+		return (NULL);
+	new_item->key = malloc(strlen(key) + 1);
+	if (new_item->key == NULL)
 	{
-		free(node);
-		return (0);
+		free(new_item);
+		return (NULL);
 	}
-	node->value = strdup(value);
-	if (!node->value)
+	new_item->value = malloc(strlen(value) + 1);
+	if (new_item->value == NULL)
 	{
-		free(node->key);
-		free(node);
-		return (0);
+		free(new_item->key);
+		free(new_item);
+		return (NULL);
 	}
+	strcpy(new_item->key, key);
+	strcpy(new_item->value, value);
+	new_item->next = NULL;
 
-	return (node);
+	return (new_item);
 }
