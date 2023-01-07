@@ -77,13 +77,13 @@ hash_node_t *creat_items(const char *key, const char *value)
 	new_item->key = malloc(strlen(key) + 1);
 	if (new_item->key == NULL)
 	{
-		free(new_item)
+		free(new_item);
 		return (NULL);
 	}
 	new_item->value = malloc(strlen(value) + 1);
 	if (new_item->value == NULL)
 	{
-		free(new_item)
+		free(new_item);
 		return (NULL);
 	}
 	strcpy(new_item->key, key);
