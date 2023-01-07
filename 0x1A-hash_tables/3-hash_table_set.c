@@ -16,7 +16,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (!key || !value || !ht)
 		return (0);
 
-	idx = hash_djb2((unsigned char*)key);
+	idx = hash_djb2((unsigned char *)key);
 	x = idx % ht->size;
 
 	for (head = ht->array[x]; head != NULL; head = head->next)
@@ -71,5 +71,5 @@ hash_node_t *creat_items(const char *key, const char *value)
 	strcpy(new_item->value, value);
 	new_item->next = NULL;
 
-	return new_item;
+	return (new_item);
 }
