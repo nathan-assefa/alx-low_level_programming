@@ -1,92 +1,74 @@
 #include "hash_tables.h"
 
 /**
- * * hash_table_set- To set elements of hash table
- * * @ht: structure of hash table;
- * * @value: value of an item
- * * @key: key of an item
- * * Return: 1 or 0
+ * new_node - allocates a new node with checking
+ * @key: the string key
+ * @value: the string value
+ *
+ * Return: the node or NULL
+ */
+hash_node_t *new_node(const char *key, const char *value)
+{
+	hash_node_t *node;
+
+	node = calloc(1, sizeof(hash_node_t));
+	if (!node)
+		return (0);
+
+	node->key = strdup(key);
+	if (!node->key)
+	{
+		free(node);
+		return (0);
+	}
+	node->value = strdup(value);
+	if (!node->value)
+	{
+		free(node->key);
+		free(node);
+		return (0);
+	}
+
+	return (node);
+}
+
+
+/**
+ * hash_table_set - adds an element to a hash table
+ * @ht: pointer to hash table
+ * @key: the string key
+ * @value: the string value
+ *
+ * Return: 1 on success, 0 otherwise
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int x, idx;
-	static unsigned long int i;
-	hash_node_t *new_item;
+	hash_node_t *node = NULL, *head;
+	unsigned long int index;
 
-	if (!ht || !key || !value)
+	if (!ht || !key || !*key || !value)
 		return (0);
 
-	new_item = creat_items(key, value);
-	if (new_item == NULL)
+	index = key_index((const unsigned char *)key, ht->size);
+	head = ht->array[index];
+	while (head)
+	{
+		if (!strcmp(key, head->key))
+		{
+			char *_value = strdup(value);
+
+			if (!_value)
+				return (0);
+			free(head->value);
+			head->value = _value;
+			return (1);
+		}
+		head = head->next;
+	}
+	node = new_node(key, value);
+	if (!node)
 		return (0);
-
-	idx = hash_djb2((unsigned char *)key);
-	x = idx % ht->size;
-	if (ht->array[x] == NULL)
-	{
-		if (i == ht->size)
-		{
-			free(new_item);
-			return (0);
-		}
-		ht->array[x] = new_item;
-		i++;
-	}
-	else
-	{
-		if (strcmp(ht->array[x]->key, key) == 0)
-		{
-			ht->array[x]->value = (char *)value;
-		}
-
-		else
-		{
-			handle_collision(ht, new_item, x);
-		}
-	}
+	node->next = ht->array[index];
+	ht->array[index] = node;
 	return (1);
-}
-
-/**
- * * handle_collision- to handle collision
- * * @ht: The hash table
- * * @item: item to be added
- * * @index: position in which collision occurs
- */
-void handle_collision(hash_table_t *ht, hash_node_t *item, unsigned long index)
-{
-	item->next = ht->array[index];
-	ht->array[index] = item;
-}
-
-/**
- * * creat_items- To creat new items
- * * @key: The key to be added in the item
- * * @value: value of the itme
- * * Return: new item
- */
-hash_node_t *creat_items(const char *key, const char *value)
-{
-	hash_node_t *new_item;
-
-	new_item = malloc(sizeof(hash_node_t));
-	if (new_item == NULL)
-		return (NULL);
-	new_item->key = malloc(strlen(key) + 1);
-	if (new_item->key == NULL)
-	{
-		free(new_item);
-		return (NULL);
-	}
-	new_item->value = malloc(strlen(value) + 1);
-	if (new_item->value == NULL)
-	{
-		free(new_item);
-		return (NULL);
-	}
-	strcpy(new_item->key, key);
-	strcpy(new_item->value, value);
-	new_item->next = NULL;
-
-	return (new_item);
 }
