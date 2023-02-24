@@ -5,9 +5,3 @@ NAME = school
 
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-
-
-main.o: main.c
-	$(CC) -c $(SRC)
-school.O: school.c
-	$(CC) -c $(SRC)
