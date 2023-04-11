@@ -38,7 +38,7 @@ int bs(int *array, size_t size, int low, int high, int value)
 
 	if (array[mid] == value)
 	{
-		if (array[mid - 1] < value)
+		if (mid == 0 || array[mid - 1] < value)
 			return (mid);
 		print_array(array, mid + 1);
 		return (bs(array, size, low, mid, value));
