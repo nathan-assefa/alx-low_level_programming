@@ -1,3 +1,5 @@
+#include "search_algos.h"
+
 /**
 * print_array - printing an array
 * @array: array to be searched
@@ -37,7 +39,7 @@ int bs(int *array, size_t size, int low, int high, int value)
 	if (array[mid] == value)
 	{
 		if (array[mid - 1] < value)
-			return (mid)
+			return (mid);
 		print_array(array, mid);
 		return (bs(array, size, low, mid, value));
 	}
