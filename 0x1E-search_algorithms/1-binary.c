@@ -23,7 +23,7 @@ void print_array(const int *array, size_t size)
 
 /**
 * bst_srch - binary search algorithm
-* @array - array to be searched
+* @array: array to be searched
 * @low: the first index in the sub array
 * @high: the last index in the sub array
 * @value: Value to be searched
@@ -43,11 +43,11 @@ int bst_srch(int *array, int low, int high, int value)
 		if (value < array[mid])
 		{
 			print_array(array + low, mid - low);
-			return bst_srch(array, low, mid - 1, value);
+			return (bst_srch(array, low, mid - 1, value));
 		}
 
 		print_array(array + mid + 1, high - mid);
-		return bst_srch(array, mid + 1, high, value);
+		return (bst_srch(array, mid + 1, high, value));
 	}
 
 	return (-1);
@@ -59,7 +59,7 @@ int bst_srch(int *array, int low, int high, int value)
 * @array: array to be searched
 * @size: size of an array
 * @value: value to be searched
-* @Return: value
+* Return: value
 */
 int binary_search(int *array, size_t size, int value)
 {
