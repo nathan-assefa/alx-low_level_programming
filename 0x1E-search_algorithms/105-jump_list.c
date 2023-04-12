@@ -33,7 +33,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 
 		printf("Value checked at index [%lu] = [%d]\n", list->index, list->n);
 
-		if (list->n >= value)
+		if (list->n > value)
 			break;
 	}
 
