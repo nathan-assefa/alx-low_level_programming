@@ -41,7 +41,7 @@ int bs(int *array, size_t size, int low, int high, int value)
 	{
 		if (mid == 0 || array[mid - 1] < value)
 			return (mid);
-		return (bs(array, size, low, mid, value));
+		return (bs(array, size, low, mid - 1, value));
 	}
 
 	if (low < high)
