@@ -3,7 +3,7 @@
 #define PRINT_CHECKED(idx, item) \
 	printf("Value checked array[%lu] = [%d]\n", (idx), (item))
 
-#define PRINT_BOUNDED(low, high) \
+#define DESCRIPTION(low, high) \
 	printf("Value found between indexes [%lu] and [%lu]\n", (low), (high))
 
 /**
@@ -39,7 +39,7 @@ int jump_search(int *array, size_t size, int value)
 			PRINT_CHECKED(j, array[j]);
 			i = j, j += 3;
 		}
-		PRINT_BOUNDED(i, j);
+		DESCRIPTION(i, j);
 
 		while ((int) i <= find_min(j, size))
 		{
