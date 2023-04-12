@@ -94,9 +94,8 @@ int exponential_search(int *array, size_t size, int value)
 		return (0);
 
 	for (i = 1; i < size && array[i] <= value; j = i, i *= 2)
-	{
 		BOUNDARY(i, array[i]);
-	}
+
 	DESCRIPTION(j, i - 1);
 	return (bs(array, size, 0, find_min(i, size), value));
 }
