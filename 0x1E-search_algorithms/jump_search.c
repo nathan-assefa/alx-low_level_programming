@@ -9,7 +9,7 @@ int find_min(int a, int b)
 {
 	if (a < b)
 		return (a);
-	return (b);
+	return (b - 1);
 }
 
 /**
@@ -34,25 +34,18 @@ int jump_search(int *array, size_t size, int value)
 		printf("Value checked array[%d] = [%d]\n", end, end);
 		start = end;
 		end += sqrt(size);
-		if (start > (int) size)
-			return (-1);
 	}
 
 
 	printf("Value found between indexes [%d] and [%d]\n", start, end);
-	while (array[start] <= value)
+	while (start <= find_min(end, size))
 	{
 		printf("Value checked array[%d] = [%d]\n", start, start);
-		start++;
 
 		if (array[start] == value)
-		{
-			printf("Value checked array[%d] = [%d]\n", start, start);
 			return (start);
-		}
+		start++;
 
-	if (start == find_min(end, size) && start != value)
-		return (-1);
 	}
 
 	return (-1);
