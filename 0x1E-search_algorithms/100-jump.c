@@ -1,4 +1,10 @@
 #include "search_algos.h"
+#define PRINT_CHECKED(idx, item) \
+	printf("Value checked array[%u] = [%d]\n", (idx), (item))
+
+#define PRINT_BOUNDED(low, high) \
+	printf("Value found between indexes [%u] and [%u]\n", (low), (high))
+
 /**
 * find_mid - Finds the min value
 * @a: integer
@@ -31,16 +37,16 @@ int jump_search(int *array, size_t size, int value)
 
 	while (array[end] < value && end < (int) size)
 	{
-		printf("Value checked array[%d] = [%d]\n", end, end);
+		PRINT_CHECKED(end, array[end]);
 		start = end;
 		end += sqrt(size);
 	}
 
 
-	printf("Value found between indexes [%d] and [%d]\n", start, end);
+	PRINT_BOUNDED(start, end);
 	while (start <= find_min(end, size))
 	{
-		printf("Value checked array[%d] = [%d]\n", start, start);
+		PRINT_CHECKED(start, array[start]);
 
 		if (array[start] == value)
 			return (start);
