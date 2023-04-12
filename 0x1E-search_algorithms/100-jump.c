@@ -7,7 +7,7 @@
 	printf("Value found between indexes [%lu] and [%lu]\n", (low), (high))
 
 /**
- * find_mid - Finds the min value
+ * find_min - Finds the min value
  * @a: integer
  * @b: integer
  * Return: min value
@@ -40,7 +40,7 @@ int jump_search(int *array, size_t size, int value)
 			i = j, j += 3;
 		}
 		PRINT_BOUNDED(i, j);
-		
+
 		while ((int) i <= find_min(j, size))
 		{
 			PRINT_CHECKED(i, array[i]);
