@@ -1,49 +1,51 @@
+#include <math.h>
 #include "search_algos.h"
 
 /**
-* jump_list - Jump list in linked list
-* @list: head pointer to linked list
-* @size: size of a linked list
-* @value: value to be searched
-* Return: Pointer to a node having a value
-*/
+ * jump_list - search a single linked list using the jump search method
+ * @list: pointer to first node in linked list
+ * @size: size of the list (number of nodes)
+ * @value: value to be searched for
+ *
+ * Return: pointer to first node containing value or NULL if not present
+ * or list is empty
+ */
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	listint_t *head;
-	int i, block_size;
+	listint_t *hold = list;
+	int i, jump;
 
-	if (!list)
+	if (list == NULL || size == 0)
 		return (NULL);
 
-	head = NULL;
-	block_size = sqrt(size);
+	jump = sqrt(size);
 
-	for (; list->next;)
+	while (hold->next != NULL)
 	{
-		head = list;
+		list = hold;
 
-		for (i = 0; i < block_size; i++)
+		for (i = 0; i < jump; i++)
 		{
-			if (!list->next)
+			hold = hold->next;
+			if (hold->next == NULL)
 				break;
-			list = list->next;
 		}
 
-		printf("Value checked at index [%lu] = [%d]\n", list->index, list->n);
+		printf("Value checked at index [%lu] = [%d]\n", hold->index, hold->n);
 
-		if (list->n > value)
+		if (hold->n >= value)
 			break;
 	}
 
-	printf("Value found between indexes [%lu] and [%lu]\n", head->index,
-	list->index);
-	while (head && head != head->next)
-	{
-		printf("Value checked at index [%lu] = [%d]\n", head->index, head->n);
-		if (head->n == value)
-			return (head);
+	printf("Value found between indexes [%lu] and [%lu]\n", list->index,
+	       hold->index);
 
-		head = head->next;
+	while (list != NULL && list != hold->next)
+	{
+		printf("Value checked at index [%lu] = [%d]\n", list->index, list->n);
+		if (list->n == value)
+			return (list);
+		list = list->next;
 	}
 
 	return (NULL);
