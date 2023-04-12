@@ -2,8 +2,8 @@
 #include "search_algos.h"
 
 /**
- * jump_hold - search a single linked hold using the jump search method
- * @hold: pointer to first node in linked hold
+ * jump_list - search a single linked hold using the jump search method
+ * @list: pointer to first node in linked hold
  * @size: size of the hold (number of nodes)
  * @value: value to be searched for
  *
@@ -12,7 +12,7 @@
  */
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	listint_t *hold = list;
+	listint_t *hold = NULL;
 	int i, jump;
 
 	if (list == NULL)
