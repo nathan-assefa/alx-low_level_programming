@@ -1,6 +1,6 @@
 #include "search_algos.h"
 
-#define PRINT_CHECKED(idx, item) \
+#define BOUNDARY(idx, item) \
 	printf("Value checked array[%lu] = [%d]\n", (idx), (item))
 
 #define DESCRIPTION(low, high) \
@@ -36,14 +36,14 @@ int jump_search(int *array, size_t size, int value)
 	{
 		while (j < size && array[j] < value)
 		{
-			PRINT_CHECKED(j, array[j]);
+			BOUNDARY(j, array[j]);
 			i = j, j += 3;
 		}
 		DESCRIPTION(i, j);
 
 		while ((int) i <= find_min(j, size))
 		{
-			PRINT_CHECKED(i, array[i]);
+			BOUNDARY(i, array[i]);
 			if (array[i] == value)
 				return (i);
 			++i;
