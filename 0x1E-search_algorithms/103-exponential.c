@@ -45,7 +45,7 @@ int find_min(int a, int b)
 /**
 * bs - binary search
 * @array: Array to be searched
-* @size: size of an array
+* @size: size of an array to searched
 * @low: least boundary
 * @high: max boundary
 * @value: value to be searched
