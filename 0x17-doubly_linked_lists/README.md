@@ -60,12 +60,11 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 # Tasks
 ## 0. Print list
 #### mandatory
-Score: 100.0% (Checks completed: 100.0%)
 Write a function that prints all the elements of a dlistint_t list.
 
-  Prototype: size_t print_dlistint(const dlistint_t *h);
-  Return: the number of nodes
-  Format: see example
+- Prototype: size_t print_dlistint(const dlistint_t *h);
+- Return: the number of nodes
+- Format: see example
   julien@ubuntu:~/0x17. Doubly linked lists$ cat 0-main.c 
   #include <stdlib.h>
   #include <string.h>
